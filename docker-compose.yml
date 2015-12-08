@@ -1,5 +1,5 @@
 web:
-    image: sequenceiq/docker-training:v5
+    image: sequenceiq/training:v5
     ports:
         - 80
     environment:
