@@ -3,7 +3,35 @@ web:
     ports:
         - 80
     environment:
-        - TITLE="tuesday compose"
+        - SERVICE_NAME=web
+        - TITLE=tuesday compose
         - COLOR=lightgreen
 
-#clinet:
+clinet:
+    image: centos
+    dns:
+        - 172.17.0.1
+    links:
+        - web
+    command: bash
+    tty: true
+
+consul:
+    ports:
+        - "172.17.0.1:53:8600/udp"
+        - "8400:8400"
+        - "8500:8500"
+    hostname: node1
+    image: gliderlabs/consul-server:0.5
+    command: --bootstrap --server --advertise 192.168.59.103 -recursor 10.42.1.20
+
+registrator:
+    privileged: true
+    volumes:
+        - "/var/run/docker.sock:/tmp/docker.sock"
+    image: gliderlabs/registrator:v5
+    links:
+        - consul
+    command: consul://consul:8500
+
+
