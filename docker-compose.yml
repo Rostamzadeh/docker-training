@@ -1,0 +1,9 @@
+web:
+    image: sequenceiq/docker-training:v4
+    ports:
+        - 80
+    environment:
+        - TITLE="tuesday compose"
+        - COLOR=lightgreen
+
+#clinet:

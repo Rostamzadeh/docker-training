@@ -1,9 +1,8 @@
-FROM ubuntu
+FROM alpine
 
-RUN apt-get update
-RUN apt-get install -y nginx
+RUN apk add -U nginx
 
 ADD ./start /
-EXPOSE 80 443
+EXPOSE 80
 CMD [ "/start" ]
 
