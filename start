@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cat > /usr/share/nginx/html/index.html <<EOF
+<body bgcolor="$COLOR">
+<h1>$TITLE</h1>
+$BODY
+</body>
+EOF
+
+nginx
+tail -f /var/log/nginx/access.log
