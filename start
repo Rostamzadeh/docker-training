@@ -4,6 +4,8 @@ cat > /usr/share/nginx/html/index.html <<EOF
 <body bgcolor="$COLOR">
 <h1>$TITLE</h1>
 $BODY
+<hr/>
+<h3>served by: $HOSTNAME</h3>
 </body>
 EOF
 
