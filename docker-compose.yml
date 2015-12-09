@@ -18,8 +18,7 @@ consul:
     environment:
         - SERVICE_IGNORE
     ports:
-        - "172.17.0.1:53:8600/udp"
-        - "8400:8400"
+        - "53:8600/udp"
         - "8500:8500"
     hostname: node1
     image: gliderlabs/consul-server:0.5
