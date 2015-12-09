@@ -1,10 +1,21 @@
-web:
+web-master:
     image: sequenceiq/training:v5
     ports:
         - 80
     environment:
         - SERVICE_NAME=web
-        - TITLE=tuesday compose
+        - SERVICE_TAGS=master,green
+        - TITLE=wednesday compose
+        - COLOR=green
+
+web-client:
+    image: sequenceiq/training:v5
+    ports:
+        - 80
+    environment:
+        - SERVICE_NAME=web
+        - SERVICE_TAGS=client
+        - TITLE=wednesday compose
         - COLOR=lightgreen
 
 clinet:
