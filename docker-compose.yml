@@ -11,8 +11,6 @@ clinet:
     image: centos
     dns:
         - 172.17.0.1
-    links:
-        - web
     command: bash
     tty: true
 
