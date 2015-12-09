@@ -28,7 +28,7 @@ registrator:
     privileged: true
     volumes:
         - "/var/run/docker.sock:/tmp/docker.sock"
-    image: gliderlabs/registrator:v5
+    image: gliderlabs/registrator:latest
     links:
         - consul
     command: consul://consul:8500
