@@ -31,6 +31,6 @@ registrator:
     image: gliderlabs/registrator:latest
     links:
         - consul
-    command: consul://consul:8500
+    command: -internal consul://consul:8500
 
 
