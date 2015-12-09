@@ -29,7 +29,6 @@ registrator:
     volumes:
         - "/var/run/docker.sock:/tmp/docker.sock"
     image: gliderlabs/registrator:v5
-        - /Users/lpapp/go/src/github.com/gliderlabs/registrator/registrator-linux:/bin/registrator
     links:
         - consul
     command: consul://consul:8500
